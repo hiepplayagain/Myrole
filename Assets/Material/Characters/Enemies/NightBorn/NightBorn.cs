@@ -1,0 +1,169 @@
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using Unity.Burst.CompilerServices;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class NightBorn : MonoBehaviour
+{
+    Rigidbody2D rb;
+    public Animator anim;
+    public float speed = 4f;
+    public float direction = 1;
+    public Transform checkGround;
+    public float lengCheck;
+    public float playerCheck;
+    public float speedSet;
+    public float idleTime;
+    public float idleTimeSet = 2f;
+    public bool isIdling = false;
+
+    public Transform attackArea;
+    public float attackCoolDown;
+    public float attackCoolDownDefault = 2f;
+
+    public Vector3[] offset;
+
+    public Canvas dialogueCanvas;
+    public TMP_Text dialogueShowText;
+    public string[] dialogueText;
+    public float speedTyping = 0.1f;
+    public int textIndex = 0;
+
+    //stats
+    public int damage = 20;
+    public int maxHealth = 100;
+    public int currentHealth;
+
+    public Image healthBar;
+
+    void Start()
+    {
+        StartCoroutine(TypeText(dialogueText[0]));
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        speedSet = speed;
+        attackCoolDown = 0;
+        currentHealth = maxHealth;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        dialogueCanvas.transform.position = transform.position + offset[1];
+        if (isIdling)
+        {
+            idleTime -= Time.deltaTime;
+            if (idleTime <= 0)
+            {
+                speed = speedSet;
+                isIdling = false;
+                direction *= -1;
+                Flip(direction);               
+            }
+        }
+        else
+        {
+            Patrolling();
+        }
+        DetectPlayer();
+    }
+
+    public void Patrolling()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(checkGround.position, Vector2.down, lengCheck, LayerMask.GetMask("Ground"));
+        if (hit.collider == null)
+        {
+            idleTime = idleTimeSet;
+            isIdling = true;
+            anim.SetBool("Patrolling", false); 
+           
+            rb.velocity = Vector2.zero;
+        }
+        else
+        {
+            rb.velocity = new Vector2(speed * direction, rb.velocity.y);
+            anim.SetBool("Patrolling", true);
+        }
+    }
+
+    void Flip(float index)
+    {
+        rb.transform.localScale = new Vector3(index * 4, 4, 4);
+    }
+
+    public void DetectPlayer()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position + offset[0], Vector2.right * direction, playerCheck, LayerMask.GetMask("Player"));
+        if (hit.collider != null)
+        {
+            rb.velocity = Vector2.zero;
+            
+            if (attackCoolDown <= 0)
+            {
+                anim.SetTrigger("Attack");
+                attackCoolDown = attackCoolDownDefault;
+            }
+            else
+            {
+                anim.SetBool("Patrolling", false);
+                attackCoolDown -= Time.deltaTime;
+            }
+            
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<PlayerController>().TakeDamageHero(damage);
+        }
+    }
+    
+    private void OnDrawGizmos()
+    {
+        if (checkGround == null) return;
+        Gizmos.color = Color.red;
+
+        Gizmos.DrawRay(checkGround.position, Vector2.down * lengCheck);
+        Gizmos.DrawRay(transform.position + offset[0], Vector2.right * playerCheck * direction);
+    }
+
+    private IEnumerator TypeText(string text)
+    {
+        dialogueShowText.text = "";
+        foreach (char letter in text.ToCharArray())
+        {
+            dialogueShowText.text += letter;
+            yield return new WaitForSeconds(speedTyping);
+            
+        }
+        if (dialogueShowText.text == text)
+        {
+            yield return new WaitForSeconds(2f);
+            dialogueShowText.text = "";
+            textIndex++;
+            if (textIndex < dialogueText.Length)
+            {
+                StartCoroutine(TypeText(dialogueText[textIndex]));
+            }
+            else
+            {
+                textIndex = 0;
+                StartCoroutine(TypeText(dialogueText[textIndex]));
+            }
+        }
+    }
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        healthBar.fillAmount = (float)currentHealth / maxHealth;
+        if (currentHealth <= 0)
+        {
+            anim.SetTrigger("Death");
+            Destroy(gameObject);
+        }
+    }
+}

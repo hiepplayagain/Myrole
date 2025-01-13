@@ -1,0 +1,1299 @@
+fileFormatVersion: 2
+guid: 4613a81b9626d40428c62e966f932d5b
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Desert Preview_Frame_0
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 3090
+      height: 608
+    spriteID: 0a4d012afa5c2b146abdcef8d2538c41
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Desert Preview_Frame_11
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3102
+      y: 4
+      width: 3090
+      height: 608
+    spriteID: 8b3d7517a55943f4c8b6af8e05369acb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3102, y: 4}
+  - name: Desert Preview_Frame_1
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 620
+      width: 3090
+      height: 608
+    spriteID: c49e14d18521ced419f2c0189c8ee4d6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 620}
+  - name: Desert Preview_Frame_2
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3102
+      y: 620
+      width: 3090
+      height: 608
+    spriteID: 21e0cafd3e80fba44aa09c5d1c76c074
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3102, y: 620}
+  - name: Desert Preview_Frame_3
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1236
+      width: 3090
+      height: 608
+    spriteID: 3f6b128be18eef24fb78643a6227bab2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1236}
+  - name: Desert Preview_Frame_4
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3102
+      y: 1236
+      width: 3090
+      height: 608
+    spriteID: 50e0bc25fa5163e4b9ef8a6b492b98b2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3102, y: 1236}
+  - name: Desert Preview_Frame_5
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1852
+      width: 3090
+      height: 608
+    spriteID: 4764bc230e7501a48ab927679d5ea312
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1852}
+  - name: Desert Preview_Frame_6
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3102
+      y: 1852
+      width: 3090
+      height: 608
+    spriteID: 99687e5f2165a8b4aaf00e7f956d9d34
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3102, y: 1852}
+  - name: Desert Preview_Frame_7
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2468
+      width: 3090
+      height: 608
+    spriteID: 9e5dd0bfd5bb9424aa9862f05473ad2b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2468}
+  - name: Desert Preview_Frame_8
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3102
+      y: 2468
+      width: 3090
+      height: 608
+    spriteID: 9e396a41c803ebb45bca2fb0d47fbbbf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3102, y: 2468}
+  - name: Desert Preview_Frame_9
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3084
+      width: 3090
+      height: 608
+    spriteID: 0ed6f536a47d6d743bcff8b656031ca8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 3084}
+  - name: Desert Preview_Frame_10
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3102
+      y: 3084
+      width: 3090
+      height: 608
+    spriteID: f6e108c478ee41e4a98149ef5106838a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3102, y: 3084}
+  - name: Desert Preview_Frame_12
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3700
+      width: 3090
+      height: 608
+    spriteID: 54cc59efb2f0ea24a9576184fe692be6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 3700}
+  - name: Desert Preview_Frame_13
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3102
+      y: 3700
+      width: 3090
+      height: 608
+    spriteID: 88131eff7efb77140a9aecf9b84108ed
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3102, y: 3700}
+  - name: Desert Preview_Frame_14
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4316
+      width: 3090
+      height: 608
+    spriteID: fbf33cbfdbef20446a1aee56fd67702f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4316}
+  - name: Desert Preview_Frame_15
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3102
+      y: 4316
+      width: 3090
+      height: 608
+    spriteID: 9027181a7356ba643a712d5a8883bc19
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3102, y: 4316}
+  - name: Desert Preview_Frame_16
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4932
+      width: 3090
+      height: 608
+    spriteID: 0d63f0253481dcd4182ecd8a80251800
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4932}
+  - name: Desert Preview_Frame_17
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3102
+      y: 4932
+      width: 3090
+      height: 608
+    spriteID: 48bb7012fef459448a8c349ee8bc6376
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3102, y: 4932}
+  - name: Desert Preview_Frame_18
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 5548
+      width: 3090
+      height: 608
+    spriteID: fe97723b198e4264d8098089873f0def
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 5548}
+  - name: Desert Preview_Frame_19
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3102
+      y: 5548
+      width: 3090
+      height: 608
+    spriteID: 2ced749cb5144b1489753d9d69472349
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3102, y: 5548}
+  - name: Desert Preview_Frame_20
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 6164
+      width: 3090
+      height: 608
+    spriteID: 6486f717252b4444c9b9508396485b1e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 6164}
+  - name: Desert Preview_Frame_21
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3102
+      y: 6164
+      width: 3090
+      height: 608
+    spriteID: 6799aca5c3851174b8eaf00272c7e2c4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3102, y: 6164}
+  - name: Desert Preview_Frame_22
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 6780
+      width: 3090
+      height: 608
+    spriteID: 7628a3bb82ac5bd4d81c21491b3ed23f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 6780}
+  - name: Desert Preview_Frame_23
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3102
+      y: 6780
+      width: 3090
+      height: 608
+    spriteID: 9f5ba632d719ebd4db3074a3cf950134
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3102, y: 6780}
+  - name: Desert Preview_Frame_24
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 7396
+      width: 3090
+      height: 608
+    spriteID: a1bc755df6ac77747a8a6460b5122ac6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 7396}
+  - name: Desert Preview_Frame_25
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3102
+      y: 7396
+      width: 3090
+      height: 608
+    spriteID: 186573f0d69f66041ace8eff18911308
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3102, y: 7396}
+  - name: Desert Preview_Frame_26
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 8012
+      width: 3090
+      height: 608
+    spriteID: 17b2992b62e271148ac7655845329acd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 8012}
+  - name: Desert Preview_Frame_27
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3102
+      y: 8012
+      width: 3090
+      height: 608
+    spriteID: 78445552920be9d4dac916cdc341f643
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3102, y: 8012}
+  - name: Desert Preview_Frame_28
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 8628
+      width: 3090
+      height: 608
+    spriteID: d44fed021fb4b0641b05367831386a23
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 8628}
+  - name: Desert Preview_Frame_29
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3102
+      y: 8628
+      width: 3090
+      height: 608
+    spriteID: 5fab9e17952eb6a4cad179b98268df2c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3102, y: 8628}
+  - name: Desert Preview_Frame_30
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 9244
+      width: 3090
+      height: 608
+    spriteID: 63f21b3f21df5bb4bb413a10e72fe1c4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 9244}
+  - name: Desert Preview_Frame_31
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3102
+      y: 9244
+      width: 3090
+      height: 608
+    spriteID: 849e3c876f48778439e36b7f541406f7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3102, y: 9244}
+  - name: Desert Preview_Frame_32
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 9860
+      width: 3090
+      height: 608
+    spriteID: 3f340faacecb76643ac01b3fdbee2240
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 9860}
+  - name: Desert Preview_Frame_33
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3102
+      y: 9860
+      width: 3090
+      height: 608
+    spriteID: 58b1443e3c01f6f4dbbcf8a575447d1c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3102, y: 9860}
+  - name: Desert Preview_Frame_34
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 10476
+      width: 3090
+      height: 608
+    spriteID: 6ebd2b2af8c56f742a73811378f3de3a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 10476}
+  - name: Desert Preview_Frame_35
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3102
+      y: 10476
+      width: 3090
+      height: 608
+    spriteID: 4bcf697a4a771174ba20d95aa3ca0511
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3102, y: 10476}
+  - name: Desert Preview_Frame_36
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 11092
+      width: 3090
+      height: 608
+    spriteID: 4512e00b4b9d2ea409818ada139334e8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 11092}
+  - name: Desert Preview_Frame_37
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3102
+      y: 11092
+      width: 3090
+      height: 608
+    spriteID: cb78b9250ae2ae240877c86518446e1c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3102, y: 11092}
+  - name: Desert Preview_Frame_38
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 11708
+      width: 3090
+      height: 608
+    spriteID: 0b93ef87249b4454a96fc4423447a787
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 11708}
+  - name: Desert Preview_Frame_39
+    originalName: 
+    pivot: {x: 0.50291264, y: 0.09868421}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3102
+      y: 11708
+      width: 3090
+      height: 608
+    spriteID: e1a36ae0bff62d0429c344dacd2b750b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3102, y: 11708}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 1182968903
+    name: Desert Preview
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Desert Preview_Frame_0
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: 0a4d012afa5c2b146abdcef8d2538c41
+    - name: Desert Preview_Frame_11
+      frameIndex: 11
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: 8b3d7517a55943f4c8b6af8e05369acb
+    - name: Desert Preview_Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: c49e14d18521ced419f2c0189c8ee4d6
+    - name: Desert Preview_Frame_2
+      frameIndex: 2
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: 21e0cafd3e80fba44aa09c5d1c76c074
+    - name: Desert Preview_Frame_3
+      frameIndex: 3
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: 3f6b128be18eef24fb78643a6227bab2
+    - name: Desert Preview_Frame_4
+      frameIndex: 4
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: 50e0bc25fa5163e4b9ef8a6b492b98b2
+    - name: Desert Preview_Frame_5
+      frameIndex: 5
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: 4764bc230e7501a48ab927679d5ea312
+    - name: Desert Preview_Frame_6
+      frameIndex: 6
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: 99687e5f2165a8b4aaf00e7f956d9d34
+    - name: Desert Preview_Frame_7
+      frameIndex: 7
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: 9e5dd0bfd5bb9424aa9862f05473ad2b
+    - name: Desert Preview_Frame_8
+      frameIndex: 8
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: 9e396a41c803ebb45bca2fb0d47fbbbf
+    - name: Desert Preview_Frame_9
+      frameIndex: 9
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: 0ed6f536a47d6d743bcff8b656031ca8
+    - name: Desert Preview_Frame_10
+      frameIndex: 10
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: f6e108c478ee41e4a98149ef5106838a
+    - name: Desert Preview_Frame_12
+      frameIndex: 12
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: 54cc59efb2f0ea24a9576184fe692be6
+    - name: Desert Preview_Frame_13
+      frameIndex: 13
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: 88131eff7efb77140a9aecf9b84108ed
+    - name: Desert Preview_Frame_14
+      frameIndex: 14
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: fbf33cbfdbef20446a1aee56fd67702f
+    - name: Desert Preview_Frame_15
+      frameIndex: 15
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: 9027181a7356ba643a712d5a8883bc19
+    - name: Desert Preview_Frame_16
+      frameIndex: 16
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: 0d63f0253481dcd4182ecd8a80251800
+    - name: Desert Preview_Frame_17
+      frameIndex: 17
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: 48bb7012fef459448a8c349ee8bc6376
+    - name: Desert Preview_Frame_18
+      frameIndex: 18
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: fe97723b198e4264d8098089873f0def
+    - name: Desert Preview_Frame_19
+      frameIndex: 19
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: 2ced749cb5144b1489753d9d69472349
+    - name: Desert Preview_Frame_20
+      frameIndex: 20
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: 6486f717252b4444c9b9508396485b1e
+    - name: Desert Preview_Frame_21
+      frameIndex: 21
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: 6799aca5c3851174b8eaf00272c7e2c4
+    - name: Desert Preview_Frame_22
+      frameIndex: 22
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: 7628a3bb82ac5bd4d81c21491b3ed23f
+    - name: Desert Preview_Frame_23
+      frameIndex: 23
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: 9f5ba632d719ebd4db3074a3cf950134
+    - name: Desert Preview_Frame_24
+      frameIndex: 24
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: a1bc755df6ac77747a8a6460b5122ac6
+    - name: Desert Preview_Frame_25
+      frameIndex: 25
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: 186573f0d69f66041ace8eff18911308
+    - name: Desert Preview_Frame_26
+      frameIndex: 26
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: 17b2992b62e271148ac7655845329acd
+    - name: Desert Preview_Frame_27
+      frameIndex: 27
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: 78445552920be9d4dac916cdc341f643
+    - name: Desert Preview_Frame_28
+      frameIndex: 28
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: d44fed021fb4b0641b05367831386a23
+    - name: Desert Preview_Frame_29
+      frameIndex: 29
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: 5fab9e17952eb6a4cad179b98268df2c
+    - name: Desert Preview_Frame_30
+      frameIndex: 30
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: 63f21b3f21df5bb4bb413a10e72fe1c4
+    - name: Desert Preview_Frame_31
+      frameIndex: 31
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: 849e3c876f48778439e36b7f541406f7
+    - name: Desert Preview_Frame_32
+      frameIndex: 32
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: 3f340faacecb76643ac01b3fdbee2240
+    - name: Desert Preview_Frame_33
+      frameIndex: 33
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: 58b1443e3c01f6f4dbbcf8a575447d1c
+    - name: Desert Preview_Frame_34
+      frameIndex: 34
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: 6ebd2b2af8c56f742a73811378f3de3a
+    - name: Desert Preview_Frame_35
+      frameIndex: 35
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: 4bcf697a4a771174ba20d95aa3ca0511
+    - name: Desert Preview_Frame_36
+      frameIndex: 36
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: 4512e00b4b9d2ea409818ada139334e8
+    - name: Desert Preview_Frame_37
+      frameIndex: 37
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: cb78b9250ae2ae240877c86518446e1c
+    - name: Desert Preview_Frame_38
+      frameIndex: 38
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: 0b93ef87249b4454a96fc4423447a787
+    - name: Desert Preview_Frame_39
+      frameIndex: 39
+      additiveSortOrder: 0
+      cellRect:
+        x: -18
+        y: -60
+        width: 3090
+        height: 608
+      spriteId: e1a36ae0bff62d0429c344dacd2b750b
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 3072, y: 544}
