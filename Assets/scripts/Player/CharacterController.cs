@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     public GameObject arrow;
     public GameObject ballEnergy;
     public Transform arrowPosition;
-    private bool arrowDirection = true;
+    private bool arrowDirection;
 
     public bool emptyMana;
     public SkillManager skillManager;
@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
 
     public UIController gameUIStatus;
 
-    public GameObject itemArrowGuide;
+    
     void Start()
     {
         runSpeed = walkSpeed * ratioRun;
@@ -106,6 +106,7 @@ public class PlayerController : MonoBehaviour
         if (direction != 0)
         {
             rb.transform.localScale = new Vector3(Mathf.Sign(direction), 1, 1);
+            arrowDirection = direction > 0;
         }
     }
 
@@ -156,7 +157,7 @@ public class PlayerController : MonoBehaviour
 
         // Set the direction based on player facing
         int direction = arrowDirection ? 1 : -1;
-
+        //arrowInstance.GetComponent<Arrow>().direction;
         // Initialize the arrow's direction
         Arrow arrowScript = arrowInstance.GetComponent<Arrow>();
         if (arrowScript != null)
@@ -213,6 +214,11 @@ public class PlayerController : MonoBehaviour
         {
             Death();
         }
+    }
+
+    public void BigDamageValue()
+    {
+        character.currentHealth = 1;
     }
 
     public void Death()

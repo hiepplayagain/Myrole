@@ -7,13 +7,14 @@ public class Arrow : MonoBehaviour
     private Animator anim;
 
     public float speed = 3f;
-    private int direction = 1;
+    public int direction;
     public int damage;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        
         //rb.velocity = new Vector2(speed * direction, 0); // Use Rigidbody for movement
     }
 
