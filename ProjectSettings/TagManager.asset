@@ -18,10 +18,10 @@ TagManager:
   - Ground
   - Keyboard
   - Side Tab Bar
-  - 
-  - 
-  - 
-  - 
+  - Floor 1
+  - Floor 2
+  - Floor 3
+  - Enemy
   - 
   - 
   - 
@@ -56,4 +56,13 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 299320587
+    locked: 0
+  - name: New Layer 5
+    uniqueID: 1316372981
+    locked: 0
+  - name: New Layer 6
+    uniqueID: 3086702633
+    locked: 0
+  - name: New Layer 7
+    uniqueID: 3092237963
     locked: 0

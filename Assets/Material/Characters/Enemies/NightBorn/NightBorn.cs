@@ -25,6 +25,7 @@ public class NightBorn : MonoBehaviour
     public bool isDead = false;
 
     public Vector3[] offset;
+    public LayerMask groundLayer;
 
     //public Canvas dialogueCanvas;
     //public TMP_Text dialogueShowText;
@@ -76,11 +77,12 @@ public class NightBorn : MonoBehaviour
             Patrolling();
         }
         DetectPlayer();
+        
     }
 
     public void Patrolling()
     {
-        RaycastHit2D hit = Physics2D.Raycast(checkGround.position, Vector2.down, lengCheck, LayerMask.GetMask("Ground"));
+        RaycastHit2D hit = Physics2D.Raycast(checkGround.position, Vector2.down, lengCheck, groundLayer);
         if (hit.collider == null)
         {
             idleTime = idleTimeSet;
@@ -188,6 +190,7 @@ public class NightBorn : MonoBehaviour
 
     public void AutoExpolusion()
     {
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
         isDead = true;
         anim.SetBool("Dead", true);
         StartCoroutine(Epolusion());
