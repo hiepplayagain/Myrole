@@ -1,9 +1,5 @@
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
-using UnityEngine.UI;
-
 public class PlayerBehaviour : MonoBehaviour
 {
     Rigidbody2D rb;
@@ -34,6 +30,7 @@ public class PlayerBehaviour : MonoBehaviour
     public float maxStamina = 100;
     public float currentStamina = 6;
     public int damage = 25;
+    public int currentDamage;
     public int defense = 30;
     public int exp;
     public int level;
@@ -42,10 +39,13 @@ public class PlayerBehaviour : MonoBehaviour
     public int criticalDamage = 20;
     public int criticalChance = 30;
 
+    int[] rateCriticalNumber = {0, 5, 100};
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        CriticalRateDamage(rateCriticalNumber);
     }
 
     private void Update()
@@ -57,8 +57,7 @@ public class PlayerBehaviour : MonoBehaviour
 
         Moving();
         OnGround();
-
-        
+        if (Input.GetKeyDown(KeyCode.KeypadEnter)) CriticalRateDamage(rateCriticalNumber);
     }
 
     public void Moving()
@@ -88,6 +87,14 @@ public class PlayerBehaviour : MonoBehaviour
         damagePosition.position = offset;
         damageShow.text = "- " + damage.ToString();
         Destroy(damageText, 2f);
+    }
+
+   
+
+    void CriticalRateDamage(int[] rateLists)
+    {
+        int randomCriticalRate = Random.Range(rateLists[0], rateLists[rateLists.Length - 1]);
+        Debug.Log(randomCriticalRate);
     }
 
     public void AttackFirstSkill()

@@ -93,6 +93,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6603256379958620822}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3976857143872841979
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2594575319073098367}
+  m_Layer: 0
+  m_Name: FloatingPoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2594575319073098367
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3976857143872841979}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.967, y: -0.72549987, z: -3.1729789}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6603256379958620822}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4671917452202282725
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,6 +193,7 @@ Transform:
   - {fileID: 1644123083932640757}
   - {fileID: 719025467662732701}
   - {fileID: 3458342009958669371}
+  - {fileID: 2594575319073098367}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5449102008451911934
@@ -333,9 +365,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   damageTextBox: {fileID: 3225185674883689980, guid: ae906a34e9378f24e85a0717c51940da, type: 3}
-  parentTextBox: {fileID: 0}
+  parentTextBox: {fileID: 2594575319073098367}
   textCooldownSet: 2
   textCooldown: 0
+  damageTextPosition: {x: 0, y: 0}
   maxHealth: 100
   currentHealth: 0
   maxMana: 100
