@@ -26,6 +26,7 @@ public class NightBorn : MonoBehaviour
 
     public Vector3[] offset;
     public LayerMask groundLayer;
+    public float radius;
 
     //public Canvas dialogueCanvas;
     //public TMP_Text dialogueShowText;
@@ -126,19 +127,15 @@ public class NightBorn : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void AttackArea()
     {
-        if (collision.gameObject.CompareTag("Player") && !isDead)
+        Collider2D[] attack = Physics2D.OverlapCircleAll(attackArea.position, radius, LayerMask.GetMask("Player"));
+        foreach (Collider2D player in attack)
         {
-            collision.gameObject.GetComponent<PlayerController>().TakeDamageHero(damage);
-            Debug.Log("Damage");
-        }
-        else if (collision.gameObject.CompareTag("Player") && isDead)
-        {
-            collision.gameObject.GetComponent<PlayerController>().BigDamageValue();
-            Debug.Log("Big Damage");
+            player.GetComponent<PlayerBehaviour>().TakeDamageHero(damage);
         }
     }
+    
 
     private void OnDrawGizmos()
     {
@@ -147,6 +144,7 @@ public class NightBorn : MonoBehaviour
 
         Gizmos.DrawRay(checkGround.position, Vector2.down * lengCheck);
         Gizmos.DrawRay(transform.position + offset[0], Vector2.right * playerCheck * direction);
+        Gizmos.DrawWireSphere(attackArea.position, radius);
     }
 
     //private IEnumerator TypeText(string text)

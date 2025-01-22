@@ -1,3 +1,4 @@
+using System.Xml.Serialization;
 using TMPro;
 using UnityEngine;
 public class PlayerBehaviour : MonoBehaviour
@@ -16,11 +17,10 @@ public class PlayerBehaviour : MonoBehaviour
     public LayerMask layerOfGround;
     public GameObject damageTextBox;
     public Transform parentTextBox;
-    
 
-    public float textCooldownSet = 2f;
-    public float textCooldown;
-    public Vector2 damageTextPosition;
+    public GameObject retryGame;
+    public BoxCollider2D bodyMain;
+    
     //Stats
 
     public int maxHealth = 100;
@@ -29,23 +29,24 @@ public class PlayerBehaviour : MonoBehaviour
     public int currentMana;
     public float maxStamina = 100;
     public float currentStamina = 6;
-    public int damage = 25;
-    public int currentDamage;
     public int defense = 30;
     public int exp;
     public int level;
     public int luck = 20;
     public int potentialSkillPoints = 20;
-    public int criticalDamage = 20;
-    public int criticalChance = 30;
 
-    int[] rateCriticalNumber = {0, 5, 100};
+    //Damage settings
+    public int damage = 25;
+    public int criticalChance = 30;
+    public int buffEffect;
+    public Vector2 damageTextPosition;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        CriticalRateDamage(rateCriticalNumber);
+        DamageCalculate(criticalChance);
+        currentHealth = maxHealth;
     }
 
     private void Update()
@@ -57,7 +58,7 @@ public class PlayerBehaviour : MonoBehaviour
 
         Moving();
         OnGround();
-        if (Input.GetKeyDown(KeyCode.KeypadEnter)) CriticalRateDamage(rateCriticalNumber);
+        if (Input.GetKeyDown(KeyCode.J)) Debug.Log(DamageCalculate(criticalChance));
     }
 
     public void Moving()
@@ -86,15 +87,24 @@ public class PlayerBehaviour : MonoBehaviour
         var damagePosition = damageText.transform.Find("Point").GetComponent<RectTransform>();
         damagePosition.position = offset;
         damageShow.text = "- " + damage.ToString();
-        Destroy(damageText, 2f);
+        Destroy(damageText, 1.5f);
     }
 
    
 
-    void CriticalRateDamage(int[] rateLists)
+    int DamageCalculate(int criticalRate)
     {
-        int randomCriticalRate = Random.Range(rateLists[0], rateLists[rateLists.Length - 1]);
-        Debug.Log(randomCriticalRate);
+        int currentDamage;
+        int decreaseCriticalRate = 100 - criticalRate;
+        System.Random random = new System.Random();
+        int randomCriticalRate = random.Next(1, decreaseCriticalRate);
+        int randomCriticalRateValue = randomCriticalRate switch
+        {
+             <= 60 => 0,
+             <= 90 => 10,
+            <= 100 => 100,
+        };
+        return currentDamage = damage + damage * randomCriticalRateValue / 100 + damage * buffEffect;
     }
 
     public void AttackFirstSkill()
@@ -109,8 +119,8 @@ public class PlayerBehaviour : MonoBehaviour
 
         foreach (var attack in attacks)
         {
-            attack.GetComponent<NightBorn>().TakeDamage(damage);
-            DamageShow(damage, attack.transform.position);
+            attack.GetComponent<NightBorn>().TakeDamage(DamageCalculate(criticalChance));
+            DamageShow(DamageCalculate(criticalChance), attack.transform.position);
         }
     }
     public void AttackSecondSkill()
@@ -121,9 +131,13 @@ public class PlayerBehaviour : MonoBehaviour
     }
     void SecondAttack()
     {
-        bool attack = Physics2D.OverlapCircle(secondSkillCheck.position, 0.05f, LayerMask.GetMask("Enemy"));
+        Collider2D[] attacks = Physics2D.OverlapCircleAll(secondSkillCheck.position, 0.05f, LayerMask.GetMask("Enemy"));
 
-        //if (attack) DamageShow(damage);
+        foreach (var attack in attacks)
+        {
+            attack.GetComponent<NightBorn>().TakeDamage(DamageCalculate(criticalChance));
+            DamageShow(DamageCalculate(criticalChance), attack.transform.position);
+        }
     }
     public void AttackLastSkill()
     {
@@ -132,8 +146,13 @@ public class PlayerBehaviour : MonoBehaviour
     }
     void LastAttack()
     {
-        bool attack = Physics2D.OverlapCircle(lastSkillCheck.position, 0.05f, LayerMask.GetMask("Enemy"));
-        //if (attack) DamageShow(damage);
+        Collider2D[] attacks = Physics2D.OverlapCircleAll(lastSkillCheck.position, 0.05f, LayerMask.GetMask("Enemy"));
+
+        foreach (var attack in attacks)
+        {
+            attack.GetComponent<NightBorn>().TakeDamage(DamageCalculate(criticalChance));
+            DamageShow(DamageCalculate(criticalChance), attack.transform.position);
+        }
     }    
     public bool OnGround()
     {
@@ -150,5 +169,21 @@ public class PlayerBehaviour : MonoBehaviour
     public void Flip(float direction)
     {
         if (direction != 0) rb.transform.localScale = new Vector3(Mathf.Sign(direction)*2, 2, 2);
+    }
+
+    public void TakeDamageHero(int damage)
+    {
+        currentHealth -= damage;
+        anim.SetTrigger("Hurt");
+        if (currentHealth <= 0) Dead();
+    }
+
+    void Dead()
+    {
+        anim.SetTrigger("Dead");
+        retryGame.SetActive(true);
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        this.enabled = false;
     }
 }

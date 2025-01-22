@@ -39,6 +39,8 @@ public class UIController : MonoBehaviour
     public Sprite selectedSprite;
     public Button button;
 
+    public GameObject RetryBox;
+
     //Select item
     public Transform parentObject; // Parent object (drag vào trong Inspector)
     private int selectedIndex = 0;
@@ -254,6 +256,15 @@ public class UIController : MonoBehaviour
         Transform child = parentObject.GetChild(selectedIndex);
         child.GetComponent<IdentifyItem>().item.itemAmount = 0;
         Destroy(child.gameObject);
+    }
+
+    public void RetryBoxOpen()
+    {
+        RetryBox.SetActive(true);
+    }
+    public void RetryBoxClose()
+    {
+        RetryBox.SetActive(false);
     }
 }
 
