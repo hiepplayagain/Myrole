@@ -27,15 +27,7 @@ public class NightBorn : MonoBehaviour
     public Vector3[] offset;
     public LayerMask groundLayer;
     public float radius;
-
-    //public Canvas dialogueCanvas;
-    //public TMP_Text dialogueShowText;
-
-    //[SerializeField]
-    //private string[] dialogueText;
-    //public float speedTyping = 0.1f;
-    //public int textIndex = 0;
-
+    
     //stats
     public int damage = 20;
     public int maxHealth = 100;
@@ -44,8 +36,6 @@ public class NightBorn : MonoBehaviour
 
 
     public Image healthBar;
-    //public GameObject dialoguaBox;
-
 
     void Start()
     {
@@ -61,7 +51,13 @@ public class NightBorn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //dialogueCanvas.transform.position = transform.position + offset[1];
+        Idling();
+        DetectPlayer();
+        
+    }
+
+    void Idling()
+    {
         if (isIdling)
         {
             idleTime -= Time.deltaTime;
@@ -77,8 +73,6 @@ public class NightBorn : MonoBehaviour
         {
             Patrolling();
         }
-        DetectPlayer();
-        
     }
 
     public void Patrolling()
@@ -147,34 +141,6 @@ public class NightBorn : MonoBehaviour
         Gizmos.DrawWireSphere(attackArea.position, radius);
     }
 
-    //private IEnumerator TypeText(string text)
-    //{
-    //    dialogueShowText.text = "";
-    //    foreach (char letter in text.ToCharArray())
-    //    {
-    //        dialogueShowText.text += letter;
-    //        yield return new WaitForSeconds(speedTyping);
-
-    //    }
-    //    if (dialogueShowText.text == text)
-    //    {
-    //        yield return new WaitForSeconds(2f);
-    //        dialoguaBox.SetActive(false);
-    //        yield return new WaitForSeconds(2f);
-    //        dialoguaBox.SetActive(true);
-    //        dialogueShowText.text = "";
-    //        textIndex++;
-    //        if (textIndex < dialogueText.Length)
-    //        {
-    //            StartCoroutine(TypeText(dialogueText[textIndex]));
-    //        }
-    //        else
-    //        {
-    //            textIndex = 0;
-    //            StartCoroutine(TypeText(dialogueText[textIndex]));
-    //        }
-    //    }
-    //}
     public void TakeDamage(int damage)
     {
         anim.SetTrigger("Hurt");

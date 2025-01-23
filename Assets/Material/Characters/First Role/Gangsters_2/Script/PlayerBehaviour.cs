@@ -1,4 +1,4 @@
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 using TMPro;
 using UnityEngine;
 public class PlayerBehaviour : MonoBehaviour
@@ -20,7 +20,9 @@ public class PlayerBehaviour : MonoBehaviour
 
     public GameObject retryGame;
     public BoxCollider2D bodyMain;
-    
+
+    public GameObject[] objects;
+
     //Stats
 
     public int maxHealth = 100;
@@ -90,8 +92,6 @@ public class PlayerBehaviour : MonoBehaviour
         Destroy(damageText, 1.5f);
     }
 
-   
-
     int DamageCalculate(int criticalRate)
     {
         int currentDamage;
@@ -156,7 +156,30 @@ public class PlayerBehaviour : MonoBehaviour
     }    
     public bool OnGround()
     {
-        if (Physics2D.BoxCast(groundCheck.position, new Vector2(0.1f, 0.05f), 0, -transform.up, 0, layerOfGround)) return true;
+        RaycastHit2D checking = Physics2D.BoxCast(groundCheck.position, new Vector2(0.1f, 0.05f), 0, -transform.up, 0, layerOfGround);
+        int layerOrder = checking.collider.gameObject.layer;
+        if (checking && layerOrder == 11)
+        {
+            Physics2D.IgnoreLayerCollision(3, 9, true);
+            Physics2D.IgnoreLayerCollision(3, 10, true);
+            Physics2D.IgnoreLayerCollision(3, 11, false);
+            return true;
+
+        }
+        else if (checking && layerOrder == 10)
+        {
+            Physics2D.IgnoreLayerCollision(3, 9, true);
+            Physics2D.IgnoreLayerCollision(3, 10, false);
+            Physics2D.IgnoreLayerCollision(3, 11, true);
+            return true;
+        }
+        else if (checking && layerOrder == 9)
+        {
+            Physics2D.IgnoreLayerCollision(3, 9, false);
+            Physics2D.IgnoreLayerCollision(3, 10, true);
+            Physics2D.IgnoreLayerCollision(3, 11, true);
+            return true;
+        }
         else return false;
     }
 
@@ -185,5 +208,6 @@ public class PlayerBehaviour : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
         this.enabled = false;
+
     }
 }

@@ -305,7 +305,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 6320398730272388668}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 1d01bfc79065e854499af51c652e88df, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -366,20 +366,20 @@ MonoBehaviour:
     m_Bits: 2048
   damageTextBox: {fileID: 3225185674883689980, guid: ae906a34e9378f24e85a0717c51940da, type: 3}
   parentTextBox: {fileID: 2594575319073098367}
-  textCooldownSet: 2
-  textCooldown: 0
-  damageTextPosition: {x: 0, y: 0}
+  retryGame: {fileID: 0}
+  bodyMain: {fileID: 0}
   maxHealth: 100
   currentHealth: 0
   maxMana: 100
   currentMana: 0
   maxStamina: 100
   currentStamina: 6
-  damage: 25
   defense: 30
   exp: 0
   level: 0
   luck: 20
   potentialSkillPoints: 20
-  criticalDamage: 20
+  damage: 25
   criticalChance: 30
+  buffEffect: 0
+  damageTextPosition: {x: 0, y: 0}
