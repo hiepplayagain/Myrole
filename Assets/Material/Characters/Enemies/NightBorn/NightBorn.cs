@@ -27,7 +27,11 @@ public class NightBorn : MonoBehaviour
     public Vector3[] offset;
     public LayerMask groundLayer;
     public float radius;
-    
+
+    public Transform healthTabBar;
+    public Transform epoPosition;
+    public GameObject monster;
+
     //stats
     public int damage = 20;
     public int maxHealth = 100;
@@ -46,6 +50,7 @@ public class NightBorn : MonoBehaviour
         speedSet = speed;
         attackCoolDown = 0;
         currentHealth = maxHealth;
+        HealthBarShow(currentHealth, maxHealth);
     }
 
     // Update is called once per frame
@@ -53,7 +58,7 @@ public class NightBorn : MonoBehaviour
     {
         Idling();
         DetectPlayer();
-        
+        HealthBarShow(currentHealth, maxHealth);
     }
 
     void Idling()
@@ -78,13 +83,15 @@ public class NightBorn : MonoBehaviour
     public void Patrolling()
     {
         RaycastHit2D hit = Physics2D.Raycast(checkGround.position, Vector2.down, lengCheck, groundLayer);
+        
         if (hit.collider == null)
         {
             idleTime = idleTimeSet;
             isIdling = true;
             anim.SetBool("Patrolling", false);
-
+            
             rb.velocity = Vector2.zero;
+            
         }
         else
         {
@@ -101,6 +108,7 @@ public class NightBorn : MonoBehaviour
     public void DetectPlayer()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position + offset[0], Vector2.right * direction, playerCheck, LayerMask.GetMask("Player"));
+        
         if (hit.collider != null)
         {
             rb.velocity = Vector2.zero;
@@ -123,7 +131,7 @@ public class NightBorn : MonoBehaviour
 
     private void AttackArea()
     {
-        Collider2D[] attack = Physics2D.OverlapCircleAll(attackArea.position, radius, LayerMask.GetMask("Player"));
+        Collider2D[] attack = Physics2D.OverlapCircleAll(attackArea.position, 2f, LayerMask.GetMask("Player"));
         foreach (Collider2D player in attack)
         {
             player.GetComponent<PlayerBehaviour>().TakeDamageHero(damage);
@@ -138,18 +146,24 @@ public class NightBorn : MonoBehaviour
 
         Gizmos.DrawRay(checkGround.position, Vector2.down * lengCheck);
         Gizmos.DrawRay(transform.position + offset[0], Vector2.right * playerCheck * direction);
-        Gizmos.DrawWireSphere(attackArea.position, radius);
+        Gizmos.DrawWireSphere(epoPosition.position, radius);
     }
 
     public void TakeDamage(int damage)
     {
         anim.SetTrigger("Hurt");
         currentHealth -= damage;
-        healthBar.fillAmount = (float)currentHealth / maxHealth;
+        HealthBarShow(currentHealth, maxHealth);
         if (currentHealth <= 0)
         {
             AutoExpolusion();
         }
+    }
+
+    void HealthBarShow(int currentHealth, int maxHealth)
+    {
+        healthBar.fillAmount = (float)currentHealth / maxHealth;
+        healthTabBar.transform.position = new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z);
     }
 
     public void AutoExpolusion()
@@ -160,10 +174,19 @@ public class NightBorn : MonoBehaviour
         StartCoroutine(Epolusion());
     }
 
+    private void ResetHealth()
+    {
+        Collider2D[] epolusion = Physics2D.OverlapCircleAll(epoPosition.position, radius, LayerMask.GetMask("Player"));
+        foreach (var epo in epolusion)
+        {
+            epo.GetComponent<PlayerBehaviour>().currentHealth = 1;
+        }
+    }
+
     private IEnumerator Epolusion()
     {
         yield return new WaitForSeconds(2.22f);
-        Destroy(gameObject);
+        Destroy(monster);
     }
 }
 
