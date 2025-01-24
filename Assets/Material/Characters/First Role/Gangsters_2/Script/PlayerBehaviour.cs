@@ -1,4 +1,5 @@
-﻿using System.Xml.Serialization;
+﻿using System;
+using System.Xml.Serialization;
 using TMPro;
 using UnityEngine;
 public class PlayerBehaviour : MonoBehaviour
@@ -107,10 +108,9 @@ public class PlayerBehaviour : MonoBehaviour
         return currentDamage = damage + damage * randomCriticalRateValue / 100 + damage * buffEffect;
     }
 
-    public void AttackFirstSkill()
+    public virtual void AttackFirstSkill()
     {
-        rb.velocity = Vector2.zero;
-        anim.SetTrigger("Attack1");
+        Debug.Log("Attack1");
     }
 
     void FirstAttack()
@@ -209,5 +209,13 @@ public class PlayerBehaviour : MonoBehaviour
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
         this.enabled = false;
 
+    }
+}
+
+public class TestPlayer:PlayerBehaviour
+{
+    public override void AttackFirstSkill()
+    {
+        base.AttackFirstSkill();
     }
 }
