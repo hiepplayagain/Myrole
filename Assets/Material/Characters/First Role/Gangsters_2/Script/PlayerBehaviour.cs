@@ -2,6 +2,8 @@
 using System.Xml.Serialization;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.Scripting.APIUpdating;
 public class PlayerBehaviour : MonoBehaviour
 {
     Rigidbody2D rb;
@@ -23,6 +25,7 @@ public class PlayerBehaviour : MonoBehaviour
     public BoxCollider2D bodyMain;
 
     public GameObject[] objects;
+    public bool isGrounded;
 
     //Stats
 
@@ -44,6 +47,8 @@ public class PlayerBehaviour : MonoBehaviour
     public int buffEffect;
     public Vector2 damageTextPosition;
 
+    public int moveDirection;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -54,22 +59,47 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && OnGround()) Jumping();
+        OnGround();
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded) Jumping();
         if (Input.GetKeyDown(KeyCode.Q)) AttackFirstSkill();
         if (Input.GetKeyDown(KeyCode.W)) AttackSecondSkill();
         if (Input.GetKeyDown(KeyCode.E)) AttackLastSkill();
-
+        
         Moving();
-        OnGround();
         if (Input.GetKeyDown(KeyCode.J)) Debug.Log(DamageCalculate(criticalChance));
+        Debug.Log(rb.velocity.y);
+
     }
 
+    //public void MoveRight()
+    //{
+    //    moveDirection = 1;
+    //    rb.velocity = new Vector2(walkSpeed, rb.velocity.y);
+    //    anim.SetFloat("IsWalking", 1);
+    //    Flip(1);
+    //}
+
+    //public void MoveLeft()
+    //{
+    //    moveDirection = -1;
+    //    rb.velocity = new Vector2(moveDirection * walkSpeed, rb.velocity.y);
+    //    anim.SetFloat("IsWalking", 1);
+    //    Flip(-1);
+    //}
+
+    //public void MoveStop()
+    //{
+    //    moveDirection = 0;
+    //    rb.velocity = Vector2.zero;
+    //    anim.SetFloat("IsWalking", 0);
+    //}
     public void Moving()
     {
         float movingInput = Input.GetAxis("Horizontal");
         float typeInput = Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;
         
         rb.velocity = new Vector2(movingInput * typeInput, rb.velocity.y);
+        
         
         anim.SetFloat("IsWalking", Mathf.Abs(movingInput));
         anim.SetBool("Running", Input.GetKey(KeyCode.LeftShift));
@@ -80,9 +110,15 @@ public class PlayerBehaviour : MonoBehaviour
     public void Jumping()
     {
         anim.SetTrigger("Jumping");
-        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
-
+    public void IsJump()
+    {
+        if(isGrounded) rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+    }
+    public void EndJump()
+    {
+        anim.SetTrigger("EndJump");
+    }
     void DamageShow(int damage, Vector2 offset)
     {
         GameObject damageText = Instantiate(damageTextBox, parentTextBox);
@@ -154,33 +190,36 @@ public class PlayerBehaviour : MonoBehaviour
             DamageShow(DamageCalculate(criticalChance), attack.transform.position);
         }
     }    
-    public bool OnGround()
+    public void OnGround()
     {
         RaycastHit2D checking = Physics2D.BoxCast(groundCheck.position, new Vector2(0.1f, 0.05f), 0, -transform.up, 0, layerOfGround);
-        int layerOrder = checking.collider.gameObject.layer;
-        if (checking && layerOrder == 11)
-        {
-            Physics2D.IgnoreLayerCollision(3, 9, true);
-            Physics2D.IgnoreLayerCollision(3, 10, true);
-            Physics2D.IgnoreLayerCollision(3, 11, false);
-            return true;
 
-        }
-        else if (checking && layerOrder == 10)
-        {
-            Physics2D.IgnoreLayerCollision(3, 9, true);
-            Physics2D.IgnoreLayerCollision(3, 10, false);
-            Physics2D.IgnoreLayerCollision(3, 11, true);
-            return true;
-        }
-        else if (checking && layerOrder == 9)
-        {
-            Physics2D.IgnoreLayerCollision(3, 9, false);
-            Physics2D.IgnoreLayerCollision(3, 10, true);
-            Physics2D.IgnoreLayerCollision(3, 11, true);
-            return true;
-        }
-        else return false;
+        if (checking) isGrounded = true;
+        else isGrounded = false;
+        int layerOrder = checking.collider.gameObject.layer;
+        //if (checking && layerOrder == 11)
+        //{
+        //    Physics2D.IgnoreLayerCollision(3, 9, true);
+        //    Physics2D.IgnoreLayerCollision(3, 10, true);
+        //    Physics2D.IgnoreLayerCollision(3, 11, false);
+        //    return true;
+
+        //}
+        //else if (checking && layerOrder == 10)
+        //{
+        //    Physics2D.IgnoreLayerCollision(3, 9, true);
+        //    Physics2D.IgnoreLayerCollision(3, 10, false);
+        //    Physics2D.IgnoreLayerCollision(3, 11, true);
+        //    return true;
+        //}
+        //else if (checking && layerOrder == 9)
+        //{
+        //    Physics2D.IgnoreLayerCollision(3, 9, false);
+        //    Physics2D.IgnoreLayerCollision(3, 10, true);
+        //    Physics2D.IgnoreLayerCollision(3, 11, true);
+        //    return true;
+        //}
+        //else return false;
     }
 
     private void OnDrawGizmosSelected()
